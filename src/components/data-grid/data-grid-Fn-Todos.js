@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function DataGridTodos() {
+export function DataGridFnTodos() {
 
     const [todos, setTodos] = useState([])
 
@@ -52,4 +52,3 @@ function DataGridTodos() {
         </>
     )
 }
-export default DataGridTodos;

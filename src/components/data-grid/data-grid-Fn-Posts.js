@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function DataGridPosts() {
+export function DataGridFnPosts() {
 
     const [posts, setPosts] = useState([])
 
@@ -50,5 +50,5 @@ function DataGridPosts() {
         </>
     )
 }
-export default DataGridPosts;
+
 
