@@ -21,7 +21,7 @@ export function DataGridFnTodos() {
     const renderBody = () => {
         return (
             <>
-                {todos.map((todo, index) => {
+                {todos.slice(0,20).map((todo, index) => {
                     return (
                         <tr key={index}>
                             <th scope="row">{todo.id}</th>
@@ -45,7 +45,7 @@ export function DataGridFnTodos() {
                         <th scope="col">Durum</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='table-group-divider'>
                     {renderBody()}
                 </tbody>
             </table>

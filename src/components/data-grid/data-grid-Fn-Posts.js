@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from '../../context'
 
 export function DataGridFnPosts() {
 
@@ -8,8 +10,6 @@ export function DataGridFnPosts() {
         loadData()
     }, [])
 
-
-
     const loadData = () => {
         fetch("https://jsonplaceholder.typicode.com/posts")
             .then(Response => Response.json())
@@ -18,10 +18,11 @@ export function DataGridFnPosts() {
             })
     }
 
+
     const renderBody = () => {
         return (
             <>
-                {posts.map((post, index) => {
+                {posts.slice(0,20).map((post, index) => {
                     return (
                         <tr key={index}>
                             <th scope="row">{post.id}</th>
@@ -43,7 +44,7 @@ export function DataGridFnPosts() {
                         <th scope="col">Tittle</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='table-group-divider'>
                     {renderBody()}
                 </tbody>
             </table>

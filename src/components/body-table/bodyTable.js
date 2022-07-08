@@ -1,33 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
-import { DataGridFnPosts, DataGridFnTodos, DataGridClsPosts, DataGridClsTodos} from '../data-grid'
+import { DataGridFnPosts, DataGridFnTodos, DataGridClsPosts, DataGridClsTodos } from '../data-grid'
 
 function BodyTable() {
   const [upload, setUpload] = useState(true)
   const [chooseFunc, setChooseFunc] = useState(true)
 
 
-
   return (
     <>
-      <div className='container'>
-      <div className="Row">
-      <button type="button"  onClick={()=> setChooseFunc(true)} className={chooseFunc ? "btn btn-primary" : "btn btn-default"}>Class components</button>
-      <button type="button"  onClick={()=> setChooseFunc(false)} className={chooseFunc ?  "btn btn-default" : "btn btn-primary"}>function components</button>
-      </div>
+          <button type="button" onClick={() => setChooseFunc(true)} className={chooseFunc ? "btn btn-info" : "btn btn-default"}>Class components</button>
+          <button type="button" onClick={() => setChooseFunc(false)} className={chooseFunc ? "btn btn-default" : "btn btn-info"}>function components</button>
 
-      {chooseFunc ? <div className="Row">
-      <button type="button"  onClick={()=> setUpload(true)} className={upload ? "btn btn-primary" : "btn btn-default"}>Todos</button>
-      <button type="button"  onClick={()=> setUpload(false)} className={upload ? "btn btn-default" : "btn btn-primary"}>Posts</button>
-      {upload ? <DataGridClsTodos/>  : <DataGridClsPosts/>}
-      </div>
-      :
-      <div className="Row">
-      <button type="button"  onClick={()=> setUpload(true)} className={upload ? "btn btn-primary" : "btn btn-default"}>Todos</button>
-      <button type="button"  onClick={()=> setUpload(false)} className={upload ? "btn btn-default" : "btn btn-primary"}>Posts</button>
-      {upload ? <DataGridFnTodos/>  : <DataGridFnPosts/>}
-      </div>}
-      </div>   
+
+          {chooseFunc ? <div >
+            <button type="button" onClick={() => setUpload(true)} className={upload ? "btn btn-warning" : "btn btn-default"}>Todos</button>
+            <button type="button" onClick={() => setUpload(false)} className={upload ? "btn btn-default" : "btn btn-warning"}>Posts</button>
+            {upload ? <DataGridClsTodos /> : <DataGridClsPosts />}
+          </div>
+            :
+            <div >
+              <button type="button" onClick={() => setUpload(true)} className={upload ? "btn btn-warning" : "btn btn-default"}>Todos</button>
+              <button type="button" onClick={() => setUpload(false)} className={upload ? "btn btn-default" : "btn btn-warning"}>Posts</button>
+              {upload ? <DataGridFnTodos /> : <DataGridFnPosts />}
+            </div>}
     </>
   );
 }

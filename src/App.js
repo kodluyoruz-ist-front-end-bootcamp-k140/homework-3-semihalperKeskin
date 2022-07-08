@@ -8,11 +8,11 @@ import ThemeSwitcher from './themeSwitcher';
 function App() {
 
   // Tema useState
-  const [themes, setThemes] = useState('light')
-  
-  useEffect(()=>{
-    document.body.className= themes
-  },[themes])
+  const [themes, setThemes] = useState('Light')
+
+  useEffect(() => {
+    document.body.className = themes
+  }, [themes])
 
   const data = {
     themes,
@@ -22,10 +22,14 @@ function App() {
 
   return (
     <ThemeContext.Provider value={data}>
-      <ThemeSwitcher/>
-    <div className="App ">
-      <BodyTable/>
-      
+      <nav className="navbar">
+        Bootcamp Homework 3
+      </nav>
+      <div className="container">
+        <ThemeSwitcher />
+        <div className="App">
+          <BodyTable />
+        </div>
       </div>
     </ThemeContext.Provider>
   );

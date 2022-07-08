@@ -1,4 +1,6 @@
 import React from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../../context";
 
 export class DataGridClsPosts extends React.Component {
     constructor(props) {
@@ -7,6 +9,7 @@ export class DataGridClsPosts extends React.Component {
             posts: []
         }
     }
+
 
     componentDidMount() {
         this.loadData();
@@ -23,7 +26,7 @@ export class DataGridClsPosts extends React.Component {
     renderBody = () => {
         return (
             <React.Fragment>
-                {this.state.posts.map((post, index) => {
+                {this.state.posts.slice(0,20).map((post, index) => {
                     return (
                         <tr key={index}>
                             <th scope="row">{post.id}</th>
@@ -50,7 +53,7 @@ export class DataGridClsPosts extends React.Component {
                             <th scope="col">Tittle</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='table-group-divider'>
                         {this.renderBody()}
                     </tbody>
                 </table>

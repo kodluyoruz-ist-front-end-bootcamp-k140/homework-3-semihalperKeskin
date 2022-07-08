@@ -23,7 +23,7 @@ export class DataGridClsTodos extends React.Component {
     renderBody = () => {
         return (
             <React.Fragment>
-                {this.state.todos.map((todo, index) => {
+                {this.state.todos.slice(0,20).map((todo, index) => {
                     return (
                         <tr key={index}>
                             <th scope="row">{todo.id}</th>
@@ -50,7 +50,7 @@ export class DataGridClsTodos extends React.Component {
                             <th scope="col">Durum</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='table-group-divider'>
                         {this.renderBody()}
                     </tbody>
                 </table>
