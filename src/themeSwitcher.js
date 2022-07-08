@@ -5,6 +5,8 @@ import "./App.css"
 
 function ThemeSwitcher() {
 
+  // light theme dark theme geçiş
+  // contextin çekilmesi
     const {themes, setThemes} = useContext(ThemeContext)
 
       const switchThemes = () => {

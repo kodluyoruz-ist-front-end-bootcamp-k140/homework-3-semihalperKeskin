@@ -2,6 +2,8 @@ import React from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../../context";
 
+
+// class component ile post
 export class DataGridClsPosts extends React.Component {
     constructor(props) {
         super(props);

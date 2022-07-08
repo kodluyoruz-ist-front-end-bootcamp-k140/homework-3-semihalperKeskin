@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
+
+// function component ile todo
 export function DataGridFnTodos() {
 
     const [todos, setTodos] = useState([])

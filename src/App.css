@@ -61,5 +61,6 @@ body.Dark table tr:nth-child(odd) {
 }
 .navbar {
   font-family: 'Itim', cursive;
-  font-size: large;
+  font-size: 20px;
+  font-weight: 500;
 }

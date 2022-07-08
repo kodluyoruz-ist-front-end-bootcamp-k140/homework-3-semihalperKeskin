@@ -10,10 +10,13 @@ function App() {
   // Tema useState
   const [themes, setThemes] = useState('Light')
 
+  // theme değiştikçe body renginin değişmesi
   useEffect(() => {
     document.body.className = themes
   }, [themes])
 
+
+  // context ile gönderilicek value lar
   const data = {
     themes,
     setThemes
@@ -23,7 +26,7 @@ function App() {
   return (
     <ThemeContext.Provider value={data}>
       <nav className="navbar">
-        Bootcamp Homework 3
+        BOOTCAMP HOMEWORK 3
       </nav>
       <div className="container">
         <ThemeSwitcher />

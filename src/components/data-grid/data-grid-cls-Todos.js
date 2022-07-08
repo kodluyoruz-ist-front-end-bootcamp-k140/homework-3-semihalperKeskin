@@ -1,5 +1,6 @@
 import React from "react";
 
+// class component ile todo
 export class DataGridClsTodos extends React.Component {
     constructor(props) {
         super(props);

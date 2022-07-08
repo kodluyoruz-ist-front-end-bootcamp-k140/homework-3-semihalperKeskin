@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { ThemeContext } from '../../context'
 
+
+// function component ile post
 export function DataGridFnPosts() {
 
     const [posts, setPosts] = useState([])
