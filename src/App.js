@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import { ThemeContext } from './context';
+import { useEffect, useState } from 'react';
 import './App.css';
+import BodyTable from './components/body-table/bodyTable';
+import ThemeSwitcher from './themeSwitcher';
+
 
 function App() {
+
+  // Tema useState
+  const [themes, setThemes] = useState('Light')
+
+  // theme değiştikçe body renginin değişmesi
+  useEffect(() => {
+    document.body.className = themes
+  }, [themes])
+
+
+  // context ile gönderilicek value lar
+  const data = {
+    themes,
+    setThemes
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={data}>
+      <nav className="navbar">
+        BOOTCAMP HOMEWORK 3
+      </nav>
+      <div className="container">
+        <ThemeSwitcher />
+        <div className="App">
+          <BodyTable />
+        </div>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
